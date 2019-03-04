@@ -1,7 +1,10 @@
 import mongoose from 'mongoose';
 
 interface IProxy extends mongoose.Document {
-  uri: string;
+  ip: string;
+  port: string;
+  username: string;
+  password: string;
   crawled_at: Date;
   verified_at: Date;
   is_valid: boolean;
@@ -9,7 +12,11 @@ interface IProxy extends mongoose.Document {
 
 const ProxySchema = new mongoose.Schema(
   {
-    uri: String,
+    ip: String,
+    schema: String,
+    port: String,
+    username: String,
+    password: String,
     crawled_at: Date,
     verified_at: Date,
     is_valid: Boolean,
