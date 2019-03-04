@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 interface IProxy extends mongoose.Document {
   ip: string;
   port: string;
+  portocol: string;
   username: string;
   password: string;
   crawled_at: Date;
@@ -13,7 +14,7 @@ interface IProxy extends mongoose.Document {
 const ProxySchema = new mongoose.Schema(
   {
     ip: String,
-    schema: String,
+    portocol: String,
     port: String,
     username: String,
     password: String,
