@@ -34,9 +34,9 @@ server.route({
   path: '/jtd/{mac}',
   handler: (req, h) => {
     return {
-      SecondResolution: '284x116',
+      SecondResolution: '400x224',
       Description: {},
-      MainResolution: '540x260',
+      MainResolution: '400x320',
       SecondRTMPAppName: 'live\\/yourstreamlive',
       MainRTMPAppName: 'live\\/yourstreamlive',
       PollURL: 'http://companyname.yourstreamlive.com/companynamestatus/',
