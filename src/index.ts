@@ -29,15 +29,14 @@ server.route({
   },
 });
 
-
 server.route({
   method: 'GET',
   path: '/jtd/{mac}',
   handler: (req, h) => {
     return {
-      SecondResolution: '384x216',
+      SecondResolution: '284x116',
       Description: {},
-      MainResolution: '640x360',
+      MainResolution: '540x260',
       SecondRTMPAppName: 'live\\/yourstreamlive',
       MainRTMPAppName: 'live\\/yourstreamlive',
       PollURL: 'http://companyname.yourstreamlive.com/companynamestatus/',
@@ -55,6 +54,34 @@ server.route({
   },
 });
 
+server.route({
+  method: 'GET',
+  path: '/random-resolution',
+  handler: (req, h) => {
+    const mainResolutionX = Math.floor(Math.random() * 1000);
+    const mainResolutionY = Math.floor(Math.random() * 1000);
+    const secondResolutionX = Math.floor(Math.random() * 1000);
+    const secondResolutionY = Math.floor(Math.random() * 1000);
+    return {
+      SecondResolution: `${secondResolutionX}x${secondResolutionY}`,
+      Description: {},
+      MainResolution: `${mainResolutionX}x${mainResolutionY}`,
+      SecondRTMPAppName: 'live\\/yourstreamlive',
+      MainRTMPAppName: 'live\\/yourstreamlive',
+      PollURL: 'http://companyname.yourstreamlive.com/companynamestatus/',
+      SecondRTMPServerIP: 'not_used',
+      MainBitrate: '1000',
+      MainRTMPStreamName: 'not_used',
+      MainRTMPServerIPEnabled: '1',
+      ScheduleIDEnabled: '0',
+      SecondBitrate: '350',
+      MainRTMPServerIP: 'not_used',
+      SecondRTMPStreamName: 'not_used',
+      AudioInput: '0',
+      SecondRTMPServerIPEnabled: '0',
+    };
+  },
+});
 
 async function init() {
   mongoose.connect('mongodb://localhost/api', { useNewUrlParser: true });
