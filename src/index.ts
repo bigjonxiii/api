@@ -35,26 +35,14 @@ server.route({
   path: '/jtd/{macAddress}/{ipAddress}',
   handler: (req, h) => {
     console.log(req.params);
-    return {
-      SecondResolution: req.query.SecondResolution || '400x224',
-      Description: req.query.Description || {},
-      MainResolution: req.query.MainResolution || '1920x1080',
-      SecondRTMPAppName: req.query.SecondRTMPAppName || 'live\\/yourstreamlive',
-      MainRTMPAppName: req.query.MainRTMPAppName || 'live\\/yourstreamlive',
-      PollURL:
-        req.query.PollURL ||
-        'http://companyname.yourstreamlive.com/companynamestatus/',
-      SecondRTMPServerIP: req.query.SecondRTMPServerIP || 'not_used',
-      MainBitrate: req.query.MainBitrate || '1000',
-      MainRTMPStreamName: req.query.MainRTMPStreamName || 'not_used',
-      MainRTMPServerIPEnabled: req.query.MainRTMPServerIPEnabled || '1',
-      ScheduleIDEnabled: req.query.ScheduleIDEnabled || '0',
-      SecondBitrate: req.query.SecondBitrate || '350',
-      MainRTMPServerIP: req.query.MainRTMPServerIP || 'not_used',
-      SecondRTMPStreamName: req.query.SecondRTMPStreamName || 'not_used',
-      AudioInput: req.query.AudioInput || '1',
-      SecondRTMPServerIPEnabled: req.query.SecondRTMPServerIPEnabled || '0',
-    };
+    return {"MainResolution":"1280x720",
+"MainBitrate":"1500",
+"MainFPS":"30",
+"MainGOP":"60",
+"MainH264Level":"main_profile",
+"MainBitControl":"cbr",
+"MainRTMPServerEnabled":"true",
+"MainRTMPServerURL":"rtmp://a.rtmp.youtube.com/live2/9pp0-zs1x-ah3h-28fp"}
   },
 });
 
