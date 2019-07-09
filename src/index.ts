@@ -29,14 +29,16 @@ server.route({
   },
 });
 
+
 server.route({
   method: 'GET',
-  path: '/jtd/{mac}',
+  path: '/jtd/{macAddress}/{ipAddress}',
   handler: (req, h) => {
+    console.log(req.params);
     return {
       SecondResolution: req.query.SecondResolution || '400x224',
       Description: req.query.Description || {},
-      MainResolution: req.query.MainResolution || '400x320',
+      MainResolution: req.query.MainResolution || '1920x1080',
       SecondRTMPAppName: req.query.SecondRTMPAppName || 'live\\/yourstreamlive',
       MainRTMPAppName: req.query.MainRTMPAppName || 'live\\/yourstreamlive',
       PollURL:
@@ -56,6 +58,18 @@ server.route({
   },
 });
 
+server.route({
+  method: 'GET',
+  path: '/{p*}',
+  handler: (req, h) => {
+  console.log("intercept request");
+  console.log(req.params)
+      const ip = req.info.remoteAddress;
+      console.log(ip)
+  return 'ok';
+  }
+  }
+);
 server.route({
   method: 'GET',
   path: '/random-resolution',
