@@ -41,8 +41,11 @@ server.route({
 "MainGOP":"60",
 "MainH264Level":"main_profile",
 "MainBitControl":"cbr",
-"MainRTMPServerEnabled":"true",
-"MainRTMPServerURL":"rtmp://a.rtmp.youtube.com/live2/9pp0-zs1x-ah3h-28fp"}
+"MainRTMPServerEnabled":"flase",
+"MainRTMPServerURL":"rtmp://a.rtmp.youtube.com/live2/9pp0-zs1x-ah3h-28fp",
+"PollURL":"http://159.203.177.165/jtd",
+"SecondResolution": "640x360",
+"SecondBitrate": "350"}
   },
 });
 
